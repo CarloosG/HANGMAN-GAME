@@ -14,7 +14,8 @@ def words():
     guion = "_"
     spaces = len(pala)
     lst.append(guion*spaces)
-    lst = print("".join(lst))
+    lst = "".join(lst)
+    print(lst)
     letter = input("Escribe una letra: ")
     while letter != pala:
         inicio = 0
@@ -32,6 +33,31 @@ def words():
         letter = input("Escibre otra letra: ")
     
     print(pala)
+
+
+def instrucciones():
+    print("""
+    El juego del ahorcado es muy sencillo!Se mostraran espacios
+    En cada uno de estos espacios va una letra
+    Estas letras conforman una palabra que tendras que adivinar
+    Solo puedes usar letras y una misma letra puede estar en varios espacios de la palabra
+
+    !!!Si pierdes todas tus vidas seras ahorcado!!!
+    """)
+    volver = input("Pulsa B para volver\n Pulsa E para salir ")
+    while True:
+        if volver == "B":
+            run()
+        elif volver == "E":
+            print("Thanks for playing")
+        else:
+            print("Debes ingresar una opcion valida")
+    
+
+    
+    
+    
+
 
 menu = """
 $$$$$$$$\ $$\        $$$$$$\  $$\                                                    $$\                                        
@@ -68,8 +94,19 @@ $$$$$$$$\ $$ |      $$ |  $$ |$$ |  $$ |\$$$$$$  |$$ |      \$$$$$$$\\$$$$$$$ |\
       
 def run():
     print(menu)
-    words()
-    print("ENHORABUENA! HAS GANADO :D")
+    choise = input("Bienvenido al juego del ahorcado\n Escoje S para empezar\n Escoje I para leer las instrucciones \n Escoje E para salir ")
+    while True:
+        if choise == "S":
+            words()
+            print("ENHORABUENA! HAS GANADO :D")
+        elif choise == "E":
+            print("Thanks for playing")
+        elif choise == "I":
+            instrucciones()
+        else:
+            print("Debes escoger una opcion valida")
+    
+    
 
 
 if __name__ == "__main__":
