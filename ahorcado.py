@@ -15,8 +15,11 @@ def words():
     spaces = len(pala)
     lst.append(guion*spaces)
     lst = "".join(lst)
+    vidas = 15
+    print("Tienes " + str(vidas) + " vidas.Buenas suerte!")
     print(lst)
     letter = input("Escribe una letra: ")
+
     while letter != pala:
         inicio = 0
         final = 1
@@ -29,10 +32,18 @@ def words():
                 inicio +=1
                 final += 1
                 continue
+        vidas = vidas-1
+        print("Te quedan " + str(vidas) + " vidas")
+        if vidas == 0:
+            print(lose)
+            print("La palabra era " + pala + " :(")
+            break
         print(lst)
-        letter = input("Escribre otra letra: ")
-    
-    print(pala)
+        letter = input("Escribe otra letra: ")
+    if letter == pala:
+                print(win)
+                print("Muy bienn, la palabra era " + pala + " :D")
+
 
 
 def instrucciones():
@@ -117,6 +128,64 @@ win = """
 
 """
 
+lose = """
+  _____             _ _     _                 __
+ |  __ \           | (_)   | |             _ / /
+ | |__) |__ _ __ __| |_ ___| |_ ___       (_) | 
+ |  ___/ _ \ '__/ _` | / __| __/ _ \        | | 
+ | |  |  __/ | | (_| | \__ \ ||  __/       _| | 
+ |_|   \___|_|  \__,_|_|___/\__\___|      (_) | 
+                                             \_\
+                                               
+
+"""
+
+cuerda = """
+  _                                    
+ | |                                   
+ | |______ ______ ______ ______ ______ 
+ | |______|______|______|______|______|
+ | |                                   
+ | |                                   
+ | |                                   
+ |_|                                   
+ | |                                   
+ | |                                   
+ | |                                   
+ | |                                   
+ | |                                   
+ | |                                   
+ |_|                                   
+ | |                                   
+ | |                                   
+ | |                                   
+ | |                                   
+ | |                                   
+ | |                                   
+ |_|                                   
+ | |                                   
+ | |                                   
+ | |                                   
+ | |                                   
+ | |                                   
+ | |                                   
+ |_|                                   
+ | |                                   
+ | |                                   
+ | |                                   
+ | |                                   
+ | |                                   
+ | |                                   
+ 
+"""
+head = """
+        *  *            
+     *        *            
+    *          *           
+    *          *             
+     *        *             
+        *  *      
+"""
 
 
 
@@ -127,7 +196,6 @@ def run():
             choise = input("Bienvenido al juego del ahorcado\n Escoje S para empezar\n Escoje I para leer las instrucciones \n Escoje E para salir\n ")
             if choise == "S":
                 words()
-                print(win)
                 break
             elif choise == "E":
                 print("Thanks for playing")
