@@ -30,28 +30,34 @@ def words():
                 final += 1
                 continue
         print(lst)
-        letter = input("Escibre otra letra: ")
+        letter = input("Escribre otra letra: ")
     
     print(pala)
 
 
 def instrucciones():
     print("""
+    -- -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+    
+    !!INSTRUCCIONES!!
+
     El juego del ahorcado es muy sencillo!Se mostraran espacios
     En cada uno de estos espacios va una letra
     Estas letras conforman una palabra que tendras que adivinar
     Solo puedes usar letras y una misma letra puede estar en varios espacios de la palabra
 
     !!!Si pierdes todas tus vidas seras ahorcado!!!
+
+    -- -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
     """)
-    volver = input("Pulsa B para volver\n Pulsa E para salir ")
     while True:
+        volver = input("Pulsa B para volver\n ")
         if volver == "B":
             run()
-        elif volver == "E":
-            print("Thanks for playing")
+            break
         else:
             print("Debes ingresar una opcion valida")
+            continue
     
 
     
@@ -91,20 +97,47 @@ $$$$$$$$\ $$ |      $$ |  $$ |$$ |  $$ |\$$$$$$  |$$ |      \$$$$$$$\\$$$$$$$ |\
 
 
 """
-      
+win = """
+  _ _ ______       _                     _                            _ _       
+ | | |  ____|     | |                   | |                          | | |      
+ | | | |__   _ __ | |__   ___  _ __ __ _| |__  _   _  ___ _ __   __ _| | |      
+ | | |  __| | '_ \| '_ \ / _ \| '__/ _` | '_ \| | | |/ _ \ '_ \ / _` | | |      
+ |_|_| |____| | | | | | | (_) | | | (_| | |_) | |_| |  __/ | | | (_| |_|_|      
+ (_|_)______|_| |_|_| |_|\___/|_|  \__,_|_.__/ \__,_|\___|_| |_|\__,_(_|_)
+ 
+                                                                        ____  
+ | |  | |                                                   | |        _|  __ \ 
+ | |__| | __ _ ___    __ _  __ _ _ __   __ _ _ __   __ _  __| | ___   (_) |  | |
+ |  __  |/ _` / __|  / _` |/ _` | '_ \ / _` | '_ \ / _` |/ _` |/ _ \    | |  | |
+ | |  | | (_| \__ \ | (_| | (_| | | | | (_| | | | | (_| | (_| | (_) |  _| |__| |
+ |_|  |_|\__,_|___/  \__, |\__,_|_| |_|\__,_|_| |_|\__,_|\__,_|\___/  (_)_____/ 
+                      __/ |                                                     
+                     |___/   
+
+
+"""
+
+
+
+
+
 def run():
     print(menu)
-    choise = input("Bienvenido al juego del ahorcado\n Escoje S para empezar\n Escoje I para leer las instrucciones \n Escoje E para salir ")
     while True:
-        if choise == "S":
-            words()
-            print("ENHORABUENA! HAS GANADO :D")
-        elif choise == "E":
-            print("Thanks for playing")
-        elif choise == "I":
-            instrucciones()
-        else:
-            print("Debes escoger una opcion valida")
+            choise = input("Bienvenido al juego del ahorcado\n Escoje S para empezar\n Escoje I para leer las instrucciones \n Escoje E para salir\n ")
+            if choise == "S":
+                words()
+                print(win)
+                break
+            elif choise == "E":
+                print("Thanks for playing")
+                break
+            elif choise == "I":
+                instrucciones()
+            else:
+                print("Debes escoger una opcion valida\n")
+                continue
+            
     
     
 
